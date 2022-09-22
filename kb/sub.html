@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>교보문고</title>
+
+	<link href="css/reset.css" rel="stylesheet">
+	<link href="css/common.css" rel="stylesheet">
+	<link href="css/sub.css" rel="stylesheet">
+
+	<script src="https://kit.fontawesome.com/397767baf5.js" crossorigin="anonymous"></script>
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
+
+	<script src="js/header.js"></script>
+	<script src="js/mainbook.js"></script>
+	<script src="js/related.js"></script>
+	<script src="js/related_api.js"></script>
+	<script src="js/txt.js"></script>
+	<script src="js/sidebook_api.js"></script>
+	<script src="js/plus_minus.js"></script>
+
+
+</head>
+<body>
+	<div id="wrap">
+		<!--팝업 창-->
+		<div id="popup">
+			<div id="popup_box">
+				<a href="#"><img src="img/popup.jpg" alt="ad"></a>
+				<span><i class="fa-solid fa-square-xmark"></i></span>	
+			</div>	
+		</div>
+		<!--헤더-->
+		<header>
+			<!--헤더 위-->
+			<div id="top_header">
+				<div class="left_info">
+					<ul>
+						<li class="barocon"><a href="#">바로콘</a></li>
+						<li class="store_info"><a href="#">매장안내<i class="fa-solid fa-angle-down"></i></a>
+							<ul class="store">
+								<li><span>서울</span>
+									<ul class="area">
+										<li><a href="#">광화문점</a></li>
+										<li><a href="#">강남점</a></li>
+										<li><a href="#">목동점</a></li>
+										<li><a href="#">영등포점</a></li>
+										<li><a href="#">잠실점</a></li>
+										<li><a href="#">천호점</a></li>
+										<li><a href="#">합정점</a></li>
+									</ul>
+								</li>
+								<li><span>경기/인천</span>
+									<ul class="area">
+										<li><a href="#">광교점</a></li>
+										<li><a href="#">부천점</a></li>
+										<li><a href="#">분당점</a></li>
+										<li><a href="#">송도점</a></li>
+										<li><a href="#">인천점</a></li>
+										<li><a href="#">일산점</a></li>
+										<li><a href="#">판교점</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li class="benefit_info"><a href="#">회원혜택<i class="fa-solid fa-angle-down"></i></a>
+							<ul class="benefit">
+								<li><a href="#">교보북클럽</a></li>
+								<li><a href="#">등급별 회원혜택</a></li>
+								<li><a href="#">신규회원 혜택</a></li>
+								<li><a href="#">제휴포인트/상품권</a></li>
+								<li><a href="#">참좋은교보문고</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Prestige Lounge</a></li>
+					</ul>
+				</div>
+				<div class="right_info">
+					<ul>
+						<li class="login"><a href="#">로그인</a></li>
+						<li><a href="#">회원가입</a></li>
+						<li><a href="#">출석체크</a></li>
+						<li><a href="#">고객센터</a></li>
+						<li><a href="#">주문배송</a></li>
+						<li><a href="#"><i class="fa-solid fa-cart-arrow-down"></i></a></li>
+					</ul>
+				</div>
+			</div>
+			<!--헤더 중간-->
+			<div id="mid_header">
+				<!--로고-->
+				<a href="index.html"><img src="img/logo.png" alt="logo"></a>
+				<!--검색창-->
+				<div id="search">
+					<form>
+						<input type="text" maxlength="20" placeholder="우리는 책의 파도에 몸을 맡긴 채">
+						<button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+					</form>		
+				</div>
+				<!--광고-->
+				<a href="#"><img src="img/ad.jpg" alt="ad"></a>
+			</div>
+			<!--헤더 아래-->
+			<div id="bottom_header">
+				<div id="bottom_wrap">
+					<!--햄버거 메뉴-->
+					<div id="hamburger">
+						<i class="fa-solid fa-bars"></i>
+						<ul id="menu">
+							<li><a href="index.html">국내도서</a></li>
+							<li><a href="index.html">해외도서</a></li>
+							<li><a href="index.html">eBook</a></li>
+							<li><a href="index.html">장르/코믹스</a></li>
+							<li><a href="index.html">sam</a></li>
+							<li><a href="index.html">기프트</a></li>
+							<li><a href="index.html">음반/DVD</a></li>
+						</ul>	
+					</div>
+					<!--메인 메뉴-->
+					<nav>
+						<ul>
+							<li><a href="index.html">국내도서</a></li>
+							<li><a href="index.html">외국도서</a></li>
+							<li><a href="index.html">eBook</a></li>
+							<li><a href="index.html">웹소설</a></li>
+							<li><a href="index.html">기프트</a></li>
+							<li><a href="index.html">음반</a></li>
+							<li><a href="index.html">중고장터</a></li>
+						</ul>
+					</nav>
+					<!--사이드 메뉴-->
+					<div id="side_nav">
+						<ul>
+							<li><a href="#">베스트</a></li>
+							<li><a href="#">신상품</a></li>
+							<li><a href="#">이벤트</a></li>
+							<li><a href="#">사은품</a></li>
+							<li><a href="#">Picks</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</header>
+		
+		<!--섹션-->
+		<section>
+			<!--메인 책 컨테이너-->
+			<div id="main_container">
+				<!--카테고리-->
+				<div id="category">
+					<ul>
+						<li><a href="#">홈</a></li>
+						<li><i class="fa-solid fa-angle-right"></i></li>
+						<li><a href="#">국내도서</a></li>
+						<li><i class="fa-solid fa-angle-right"></i></li>
+						<li><a href="#">자기계발</a></li>
+						<li><i class="fa-solid fa-angle-right"></i></li>
+						<li><a href="#">성공/처세</a></li>
+						<li><i class="fa-solid fa-angle-right"></i></li>
+						<li><a href="#">자기관리/처세</a></li>
+					</ul>
+				</div>
+				<!--메인 책-->
+				<div id="main_book">
+					<!--책 이미지-->
+					<div id="book">
+						<div class="box"><a href="#"><img src="img/main_book.jpg" alt="book"></a></div>
+						<ul>
+							<li><a href="#">크게보기</a></li>
+							<li>|</li>
+							<li><a href="#">미리보기</a></li>
+						</ul>
+						<span>매장재고 · 위치 <i class="fa-solid fa-angle-right"></i> </span>
+						<div id="other">
+							<h5>이 책의 다른 상품 정보</h5>
+							<hr>
+							<span>eBook : 10,400원 <i class="fa-solid fa-angle-right"></i> </span>
+						</div>
+					</div>
+					<!--책 정보-->
+					<div id="book_info">
+						<!--제목 및 작가-->
+						<div id="title">
+							<ul>
+								<li><img src="img/icon_m_choice.gif" alt="icon"></li>
+								<li><img src="img/icon_m_freedel.gif" alt="icon"></li>
+								<li><img src="img/icon_m_deduction.gif" alt="icon"></li>
+							</ul>
+							<h2></h2>
+							<ul class="author">
+								<li>정김경숙 지음</li>
+								<li>웅진지식하우스</li>
+								<li>2022년 07월 08일 출간</li>
+							</ul>
+							<span>
+								<i class="fa-solid fa-heart"></i>
+								<i class="fa-solid fa-heart"></i>
+								<i class="fa-solid fa-heart"></i>
+								<i class="fa-solid fa-heart"></i>
+								10.0
+							</span>
+							<span>국내도서 주간베스트 <b>93</b>위</span>
+						</div>
+						<!--가격-->
+						<div id="price">
+							<div class="price_wrap">
+								<table>
+									<tr>
+										<td>정가</td>
+										<td class="original_price"></td>
+									</tr>
+									<tr>
+										<td>판매가</td>
+										<td class="low_price">14,850원</td>
+									</tr>
+									<tr>
+										<td>혜택</td>
+										<td>[기본적립] <b>820</b>원 적립 [<b>5</b>% 적립] <button class="info_button">안내</button></td>
+									</tr>
+									<tr>
+										<td rowspan="3"></td>
+										<td>[추가적립] 5만원 이상 구매 시 <b>2,000</b>원 추가적립 <button class="info_button">안내</button></td>
+									</tr>
+									<tr>			
+										<td>[회원혜택] 회원 등급 별, 3만원 이상 구매 시 <b>2~4</b>% 추가적립 <button class="info_button">안내</button></td>
+									</tr>
+									<tr>
+										<td>[리뷰적립] 리뷰 작성 시 e교환권 최대 <b>300</b>원 추가적립 <button class="info_button">안내</button></td>
+									</tr>
+								</table>
+							</div>
+							<!--이벤트-->
+							<div class="price_side_event">
+								<span>이 상품의 이벤트 <b>1</b>건</span>
+								<span><a href="#">계속 가봅시다 남는게 체력인 데커리어 토크</a></span>
+							</div>
+						</div>
+						<!--배송안내-->
+						<div id="delivery">
+							<span>배송비 : 무료 <button class="info_button">배송비 안내</button></span>
+							<span>배송일정 : 서울특별시 종로구 세종대로 기준 <button class="info_button">지역변경</button></span>
+							<span>바로드림 : 인터넷으로 주문하고 매장에서 직접 수령 <button class="info_button">안내</button> <button class="info_button">바로드림 혜택</button></span>
+						</div>
+						<!--주문-->
+						<div id="order">
+							<span>주문수량</span>
+							<input type="text" id="count" value="1">
+							<button class="plus">+</button>
+							<button class="minus">-</button>
+							<div id="button">
+								<button>장바구니 담기</button>
+								<button>바로구매</button>
+								<button>바로드림 주문</button>
+								<button>선물하기</button>
+								<button>보관함 담기</button>
+							</div>
+						</div>
+					</div>
+				</div>	
+			</div>
+
+			<!--연관 책-->
+			<div id="related">
+				<div class="title">
+					<h4>이 책을 구매하신 분들이 함께 구매하신 상품입니다</h4>
+				</div>
+				<div id="related_book">
+					<!--연관 책 목록-->
+					<ul class="related_book_wrap">
+						<li class="related_book1">
+							<div class="box"></div>
+							<div class="box"></div>
+							<div class="box"></div>
+							<div class="box"></div>
+							<div class="box"></div>
+						</li>
+						<li class="related_book2">
+							<div class="box"></div>
+							<div class="box"></div>
+							<div class="box"></div>
+							<div class="box"></div>
+							<div class="box"></div>
+						</li>	
+					</ul>
+					<!--연관 책 목록 슬라이드 버튼-->
+					<span class="related_prev"><i class="fa-solid fa-angle-left"></i></span>
+					<span class="related_next"><i class="fa-solid fa-angle-right"></i></span>
+				</div>
+			</div>
+
+
+			<article>
+				<div id="detail">
+					<!--이벤트-->
+					<div id="event">
+						<!--메뉴 탭-->
+						<ul class="common_tab">
+							<li><a href="#">이벤트(1)</a></li>
+							<li><a href="#">상품정보</a></li>
+							<li><a href="#">회원리뷰(3)</a></li>
+							<li><a href="#">교환/반품/품절</a></li>
+						</ul>
+						<div class="event_info">
+							<h3>이 책의 이벤트<span>해외주문/바로드림/제휴사주문/업체배송건의 경우 1+1 증정상품이 발송되지 않습니다.</span></h3>
+							<ul>
+								<li>
+									<a href="#"><img src="img/event.jpg" alt="event"></a>
+								</li>
+								<li>
+									<p>7/19 저자 정김경숙과 만나요!<br><br>
+										2022.07.08 ~ 2022.07.17
+									</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!--상품정보-->
+					<div id="product">
+						<!--메뉴 탭-->
+						<ul class="common_tab">
+							<li><a href="#">이벤트(1)</a></li>
+							<li><a href="#">상품정보</a></li>
+							<li><a href="#">회원리뷰(3)</a></li>
+							<li><a href="#">교환/반품/품절</a></li>
+						</ul>
+						<!--규격-->
+						<table>
+							<tr>
+								<td>ISBN</td>
+								<td>9788901262543(8901262541)</td>
+							</tr>
+							<tr>
+								<td>쪽수</td>
+								<td>284쪽</td>
+							</tr>
+							<tr>
+								<td>크기</td>
+								<td>136 * 210 * 23 mm /566g</td>
+							</tr>
+						</table>
+						<!--책소개 텍스트 파일로 저장-->
+						<div id="book_introduce"></div>
+						<!--책 상세이미지-->
+						<div id="detail_img">
+							<h3>상세이미지</h3>
+							<img src="img/book_info.jpg" alt="book_info">
+						</div>
+						<!--저자소개-->
+						<div id="author_introduce">
+							<h3>저자소개</h3>
+							<ul>
+								<li><img src="img/author.jpg" alt="author"></li>
+								<li>
+									<a href="#">
+										<h4>저자 : 정김경숙</h4>
+										<span>자기계발작가</span>
+									</a>
+								</li>
+							</ul>
+							<!--저자소개 텍스트 파일로 저장-->
+							<div class="text_box"></div>
+						</div>
+						<div id="index"></div>
+					</div>
+					<!--리뷰-->
+					<div id="review">
+						<!--메뉴 탭-->
+						<ul class="common_tab">
+							<li><a href="#">이벤트(1)</a></li>
+							<li><a href="#">상품정보</a></li>
+							<li><a href="#">회원리뷰(3)</a></li>
+							<li><a href="#">교환/반품/품절</a></li>
+						</ul>
+						<!--클로버 리뷰-->
+						<div id="Klover">
+							<h3>Klover 리뷰(1)</h3>
+							<div id="Klover_wrap">
+								<h4>구매 후 Klover 리뷰 작성 시, 리워드를 제공합니다.  <button class="info_button">안내</button> <span><a href="#">리뷰쓰기</a></span></h4>
+								<div class="Klover_box1">
+									<div class="icon_box">
+										<img src="img/klover.jpg" alt="icon">
+										<span><b>10.0</b>/10</span>
+									</div>
+									<div class="icon_box2">
+										<ul>
+											<li>
+												<i class="fa-solid fa-heart"></i>
+												<i class="fa-solid fa-heart"></i>
+												<i class="fa-solid fa-heart"></i>
+												<i class="fa-solid fa-heart"></i>
+												<span style="width:85px;"></span>
+											</li>
+											<li>
+												<i class="fa-solid fa-heart"></i>
+												<i class="fa-solid fa-heart"></i>
+												<i class="fa-solid fa-heart"></i>
+												<i class="fa-solid fa-heart"></i>
+											</li>
+											<li>
+												<i class="fa-solid fa-heart"></i>
+												<i class="fa-solid fa-heart"></i>
+												<i class="fa-solid fa-heart"></i>
+												<i class="fa-solid fa-heart"></i>
+											</li>
+											<li>
+												<i class="fa-solid fa-heart"></i>
+												<i class="fa-solid fa-heart"></i>
+												<i class="fa-solid fa-heart"></i>
+												<i class="fa-solid fa-heart"></i>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="Klover_box2">
+									<span style="width:35px"></span>
+									<img src="img/emoticons.png" alt="icon">
+								</div>
+							</div>
+						</div>
+						<!--댓글-->
+						<div id="comment">
+							<ul>
+								<li><a href="#">구매</a></li>
+								<li><a href="#">전체</a></li>
+							</ul>
+							<hr>
+							<!--댓글 창1-->
+							<div class="box">
+								<ul>
+									<li>he**llo</li>
+									<li>2022-07-18</li>
+									<li>
+										<i class="fa-solid fa-heart"></i>
+										<i class="fa-solid fa-heart"></i>
+										<i class="fa-solid fa-heart"></i>
+										<i class="fa-solid fa-heart"></i>
+									</li>
+									<li>좋아요</li>
+								</ul>
+								<p>교훈적인 내용이 많았습니다. 재밌게 잘 읽었습니다.</p>
+							</div>
+							<!--댓글 창2-->
+							<div class="box">
+								<ul>
+									<li>jj**ang</li>
+									<li>2022-07-15</li>
+									<li>
+										<i class="fa-solid fa-heart"></i>
+										<i class="fa-solid fa-heart"></i>
+										<i class="fa-solid fa-heart"></i>
+										<i class="fa-solid fa-heart"></i>
+									</li>
+									<li>잘읽혀요</li>
+								</ul>
+								<p>흥미롭고 재밌습니다. 저도 작가님처럼 열정적으로 해보겠습니다.</p>
+							</div>
+							<!--댓글 창3-->
+							<div class="box">
+								<ul>
+									<li>go**od</li>
+									<li>2022-07-14</li>
+									<li>
+										<i class="fa-solid fa-heart"></i>
+										<i class="fa-solid fa-heart"></i>
+										<i class="fa-solid fa-heart"></i>
+										<i class="fa-solid fa-heart"></i>
+									</li>
+									<li>좋아요</li>
+								</ul>
+								<p>제 인생책으로 남을 것 같습니다. 공감되는 부분도 많고 동기부여도 되는 책입니다. 주변분들에게 이 책을 선물해도 좋을것 같습니다. 많은 분들에게 추천합니다~</p>
+							</div>
+						</div>
+					</div>
+					<!--교환,환불,반품-->
+					<div id="exchange">
+						<!--메뉴 탭-->
+						<ul class="common_tab">
+							<li><a href="#">이벤트(1)</a></li>
+							<li><a href="#">상품정보</a></li>
+							<li><a href="#">회원리뷰(3)</a></li>
+							<li><a href="#">교환/반품/품절</a></li>
+						</ul>
+						<h3>교환/반품/품절안내</h3>
+						<h4>※ 상품 설명에 반품/교환 관련한 안내가 있는 경우 그 내용을 우선으로 합니다. (업체 사정에 따라 달라질 수 있습니다.)</h4>
+						<!--표-->
+						<table>
+							<tr>
+								<th>반품/교환방법</th>
+								<td>
+									반품/교환방법	마이룸 > 주문관리 > 주문/배송내역 > 주문조회 > 반품/교환신청 ,<br>
+									[1:1상담>반품/교환/환불] 또는 고객센터 (1544-1900)
+								</td>
+							</tr>
+							<tr>
+								<th>반품/교환가능 기간</th>
+								<td>
+									변심반품의 경우 수령 후 7일 이내,<br>
+									상품의 결함 및 계약내용과 다를 경우 문제점 발견 후 30일 이내
+								</td>
+							</tr>
+							<tr>
+								<th>반품/교환비용</th>
+								<td>
+									변심 혹은 구매착오로 인한 반품/교환은 반송료 고객 부담
+								</td>
+							</tr>
+							<tr>
+								<th>반품/교환 불가 사유</th>
+								<td>
+									<ul>
+										<li>소비자의 책임 있는 사유로 상품 등이 손실 또는 훼손된 경우</li>
+										<li>소비자의 사용, 포장 개봉에 의해 상품 등의 가치가 현저히 감소한 경우</li>
+										<li>복제가 가능한 상품 등의 포장을 훼손한 경우</li>
+										<li>소비자의 요청에 따라 개별적으로 주문 제작되는 상품의 경우 ((1)해외주문도서)</li>
+										<li>디지털 컨텐츠인 eBook, 오디오북 등을 1회 이상 다운로드를 받았을 경우</li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<th>상품 품절</th>
+								<td>
+									공급사(출판사) 재고 사정에 의해 품절/지연될 수 있으며, 품절 시 관련 사항에 대해서는
+									이메일과 문자로 안내드리겠습니다.
+								</td>
+							</tr>
+						</table>
+					</div>	
+				</div>
+				<!--비슷한 분야 책 광고-->
+				<div id="side_ad">
+					<!--베스트-->
+					<div id="best">
+						<h4>이 분야의 BEST</h4>
+						<div class="box">
+							<div class="img"></div>
+							<div class="text"></div>
+						</div>
+						<div class="box">
+							<div class="img"></div>
+							<div class="text"></div>
+						</div>
+						<div class="box">
+							<div class="img"></div>
+							<div class="text"></div>
+						</div>
+						<div class="box">
+							<div class="img"></div>
+							<div class="text"></div>
+						</div>
+					</div>
+					<!--신간-->
+					<div id="new">
+						<h4>이 분야의 신간</h4>
+						<div class="box">
+							<div class="img"></div>
+							<div class="text"></div>
+						</div>
+						<div class="box">
+							<div class="img"></div>
+							<div class="text"></div>
+						</div>
+						<div class="box">
+							<div class="img"></div>
+							<div class="text"></div>
+						</div>
+						<div class="box">
+							<div class="img"></div>
+							<div class="text"></div>
+						</div>
+					</div>
+				</div>
+			</article>
+		</section>
+
+
+		<!--푸터-->
+		<footer>
+			<div id="footer_top">
+				<ul>
+					<li><a href="#">회사소개</a></li>
+					<li><a href="#">이용약관</a></li>
+					<li><a href="#">개인정보처리방침</a></li>
+					<li><a href="#">고객센터</a></li>
+					<li><a href="#">광고문의</a></li>
+					<li><a href="#">채용정보</a></li>
+				</ul>
+			</div>
+			<!--푸터 본문-->
+			<div id="footer_wrap">
+				<div class="box1">
+					<img src="img/logo.png" alt="logo">
+					<div class="text_box">
+						<h5>㈜ 교보문고   서울시 종로구 종로 1   대표이사 : 안병현 <br>
+								사업자등록번호 : 102-81-11670 <br>
+								대표전화 : 1544-1900 (발신자 부담전화)   팩스 : 0502-987-5711 (지역번호공통) <br>
+								서울특별시 통신판매업신고번호 : 제 653호 ▶사업자정보확인 <br>
+						</h5>
+						<h6>COPYRIGHT(C) KYOBO BOOK CENTRE ALL RIGHTS RESERVED.</h6>
+					</div>
+				</div>
+				<div class="box2">
+					<h5>
+						LG U+ 구매안전서비스   ▶서비스 가입 확인 <br>
+						고객님은 안전거래를 위해 현금 등으로 결제시 저희 쇼핑몰에서 가입한 LG유플러스의 구매안전서비스를 이용하실 수 있습니다. <br>
+						[인증범위] 온라인 교보문고 서비스 운영 <br>
+						[유효기간] 2020.11.04. ~ 2023.11.03.
+					</h5>
+				</div>
+			</div>
+		</footer>
+	</div>
+</body>
+</html>
